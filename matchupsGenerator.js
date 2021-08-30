@@ -5,7 +5,7 @@ const maxRounds = 5000;
 const apiMatchups =
   "https://dashleague.games/wp-json/api/v1/stats/data?data=matchups";
 const apiTiers =
-  "https://dashleague.games/wp-json/api/v1/stats/data?data=tiers&cycle=4";
+  "https://dashleague.games/wp-json/api/v1/stats/data?data=tiers&cycle=5";
 
 /* Randomize array using Durstenfeld shuffle algorithm */
 function shuffle(a) {
