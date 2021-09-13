@@ -1,4 +1,5 @@
 const axios = require("axios");
+const seedrandom = require("./seedrandom");
 
 const maxRounds = 5000;
 
@@ -17,6 +18,12 @@ function shuffle(a) {
     array[j] = temp;
   }
   return array;
+}
+
+function getRngSeed(tiers) {
+  return Object.values(tiers)
+    .map((t) => t.join(""))
+    .join("");
 }
 
 function addMatchup(matchups, team, opponent) {
@@ -96,6 +103,8 @@ function genMatchups(matchups, tiers, tier, maxRematches) {
 async function main() {
   const matchups = (await axios.get(apiMatchups)).data.data;
   const tiers = (await axios.get(apiTiers)).data.data;
+
+  Math.seedrandom(getRngSeed(tiers));
 
   const allMatchups = {};
 
