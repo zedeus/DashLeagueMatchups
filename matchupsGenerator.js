@@ -11,9 +11,8 @@ if (!process.argv[2]) {
 
 const cycle = process.argv[2];
 
-const apiMatchups =
-  "https://dashleague.games/wp-json/api/v1/stats/data?data=matchups";
-const apiTiers = `https://dashleague.games/wp-json/api/v1/stats/data?data=tiers&cycle=${cycle}`;
+const apiMatchups = 'https://dashleague.games/wp-json/api/v1/public/data?data=matchups';
+const apiTiers    = `https://dashleague.games/wp-json/api/v1/public/data?data=tiers&cycle=${cycle}`;
 
 /* Randomize array using Durstenfeld shuffle algorithm */
 function shuffle(a) {
